@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace CommandPattern
 {
-   public  interface ICommand
+    public interface ICommandFactory
     {
-       string Name { get; }
-       string Description { get; }
-       void Order(); 
+        ICommand MakeCommand(string request); 
+
     }
 }

@@ -41,7 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandFactory.cs" />
+    <Compile Include="CommandParser.cs" />
     <Compile Include="ICommand.cs" />
+    <Compile Include="ICommandFactory.cs" />
+    <Compile Include="NullCommand.cs" />
     <Compile Include="OrderManager.cs" />
     <Compile Include="PatientShipmentCommand.cs" />
     <Compile Include="Program.cs" />

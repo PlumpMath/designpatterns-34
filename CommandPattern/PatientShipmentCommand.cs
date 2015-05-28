@@ -8,9 +8,20 @@ namespace CommandPattern
 {
     class PatientShipmentCommand : ICommand
     {
+        public string Name
+        {
+            get { return "Patient"; }
+        }
+
+        public string Description
+        {
+            get { return "Sends shipments directly to the patient";  }
+        }
+
         public void Order()
         {
 
+            Console.WriteLine("Sending medication ....");
             Console.WriteLine("Patient shipment dispatched ... directly to the patient");
         }
     }

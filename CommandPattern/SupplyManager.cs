@@ -13,14 +13,41 @@ namespace CommandPattern
     class SupplyManager
     {
 
-        public void SendSupplies()
+        public void SendSupplies(string [] args)
         {
             var orderMan = new OrderManager(); 
 
             // available commands 
             // lets create  a patient shipment directly to the patient. 
-            var patientCommand = new PatientShipmentCommand(); 
-            orderMan.CreateOrder(patientCommand);
+            var factory = new CommandFactory(); 
+
+            var commands = factory.GetAvailableCommands();
+            
+            if (args.Length == 0)
+            {
+                DisplayUsage(commands);
+                // stop execution we cant do anything without the arguments. 
+                return; 
+            }
+
+            var parser = new CommandParser();
+            var command = parser.GetCommand(args); 
+
+            orderMan.CreateOrder(command);
+
+        }
+
+        public void DisplayUsage(IEnumerable<ICommand> availableCommands)
+        {
+            Console.WriteLine("Command not found -------");
+            Console.WriteLine("List of available commands");
+
+            foreach (var command in availableCommands)
+            {
+                Console.WriteLine(" {0} ", command.Description);
+            }
+
+           
 
         }
 
