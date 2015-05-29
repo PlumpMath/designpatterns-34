@@ -13,7 +13,6 @@ namespace CommandPattern
             // call the program with Site or Patient parameters 
             // this will result into a site or direct patient shipment generation. 
 
-
             var sm = new SupplyManager(); 
             sm.SendSupplies(args);
             Console.ReadLine(); 
