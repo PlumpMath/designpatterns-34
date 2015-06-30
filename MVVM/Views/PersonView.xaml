@@ -1,0 +1,12 @@
+﻿<Window x:Class="MVVM.Views.PersonView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:MVVM"
+        Title="Personal Details" Height="205" Width="329">
+  
+    <Grid>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="136,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding ModelPerson.Firstname}"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="136,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding ModelPerson.Lastname}"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="181,108,0,0" VerticalAlignment="Top" Width="75"/>
+    </Grid>
+</Window>
